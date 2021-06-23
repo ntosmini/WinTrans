@@ -32,6 +32,28 @@ switch($TransData){
 		exit;
 	break;
 
+	case 'pull' :
+		exec('taskkill /im chrome.exe /f');
+
+		exec('schtasks /delete /tn "'.$sName.'" /f');
+		sleep(1);
+		exec('schtasks /create /tn "'. $sName .'" /tr c:\xampp\htdocs\_Ntos\_Trans\Multi_PapagoTrans_En_Kr.Ready.bat /sc once /st '. $SetStartTime .' /sd '. $SetStartDay);
+
+		exec('c:\xampp\htdocs\_Ntos\_Trans\_GitPull.bat');
+		exit;
+	break;
+
+	case 'push' :
+		exec('taskkill /im chrome.exe /f');
+
+		exec('schtasks /delete /tn "'.$sName.'" /f');
+		sleep(1);
+		exec('schtasks /create /tn "'. $sName .'" /tr c:\xampp\htdocs\_Ntos\_Trans\Multi_PapagoTrans_En_Kr.Ready.bat /sc once /st '. $SetStartTime .' /sd '. $SetStartDay);
+
+		exec('c:\xampp\htdocs\_Ntos\_Trans\_GitPush.bat');
+		exit;
+	break;
+
 	default :
 
 		$dest_file = $dir."/_Multi_PapagoTrans_En_Kr.txt";
