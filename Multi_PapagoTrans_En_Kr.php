@@ -26,6 +26,8 @@ switch($TransData){
 			exec('schtasks /delete /tn "'.$sName.'" /f');
 			sleep(1);
 			exec('schtasks /create /tn "'. $sName .'" /tr c:\xampp\htdocs\_Ntos\_Trans\Multi_PapagoTrans_En_Kr.Ready.bat /sc once /st '. $SetStartTime .' /sd '. $SetStartDay);
+		} else {
+			exec('schtasks /delete /tn "'.$sName.'" /f');
 		}	//end if
 		exit;
 	break;
