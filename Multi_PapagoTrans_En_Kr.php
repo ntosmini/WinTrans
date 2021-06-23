@@ -38,8 +38,9 @@ switch($TransData){
 		exec('schtasks /delete /tn "'.$sName.'" /f');
 		sleep(1);
 		exec('schtasks /create /tn "'. $sName .'" /tr c:\xampp\htdocs\_Ntos\_Trans\Multi_PapagoTrans_En_Kr.Ready.bat /sc once /st '. $SetStartTime .' /sd '. $SetStartDay);
-
-		exec('c:\xampp\htdocs\_Ntos\_Trans\_GitPull.bat');
+		if($pc != 1){
+			exec('c:\xampp\htdocs\_Ntos\_Trans\_GitPull.bat');
+		}	//end if
 		exit;
 	break;
 
@@ -49,8 +50,9 @@ switch($TransData){
 		exec('schtasks /delete /tn "'.$sName.'" /f');
 		sleep(1);
 		exec('schtasks /create /tn "'. $sName .'" /tr c:\xampp\htdocs\_Ntos\_Trans\Multi_PapagoTrans_En_Kr.Ready.bat /sc once /st '. $SetStartTime .' /sd '. $SetStartDay);
-
-		exec('c:\xampp\htdocs\_Ntos\_Trans\_GitPush.bat');
+		if($pc == 1){
+			exec('c:\xampp\htdocs\_Ntos\_Trans\_GitPush.bat');
+	}	//end if
 		exit;
 	break;
 
