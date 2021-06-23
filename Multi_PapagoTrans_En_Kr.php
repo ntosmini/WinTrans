@@ -13,7 +13,7 @@ $SetStartTime = date('H:i', $SetStart);
 $sName = "_PapagoMultiTrans";
 
 $dir = 'C:/xampp/htdocs/_Ntos/_Trans';
-$TransData= CF_getDataURL('http://amazon.ntos.co.kr/_Mini_/_WinTrans/Multi_PapagoTrans_En_Kr.List.php?CustId=amazon&limit='.$limit);
+$TransData= CF_getDataURL('http://amazon.ntos.co.kr/_Mini_/_WinTrans/Multi_PapagoTrans_En_Kr.List.php?CustId=amazon&pc='.$pc);
 
 
 
@@ -47,7 +47,7 @@ switch($TransData){
 unlink($dir."/_Multi_PapagoTrans_En_Kr.txt");
 
 $sType = "run";
-if(empty($limit)){
+if($pc == 1){
 	if($Chk_Hi >= "900" && $Chk_Hi <= "925"){
 		$SetStartTime = "09:29";
 		$sType == "ready";
