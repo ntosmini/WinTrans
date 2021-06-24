@@ -63,8 +63,14 @@ switch($TransData){
 		fwrite($source_file, $TransData);
 		fclose($source_file);
 
-		passthru("/xampp/htdocs/_Ntos/_Trans/Multi_PapagoTrans_En_Kr.py");
-
+		ob_start();
+		passthru("/xampp/htdocs/_Ntos/_Trans/Multi_PapagoTrans_En_Kr.py $pc ");
+		$Result = ob_get_clean(); 
+		if(preg_match('@success@', $Result)) {
+			$sType = "run";
+		} else {
+			$sType = "ready";
+		}
 
 	break;
 
@@ -72,7 +78,8 @@ switch($TransData){
 
 unlink($dir."/_Multi_PapagoTrans_En_Kr.txt");
 
-$sType = "run";
+$sType = (empty($sType))?"run":$sType;
+
 if($pc == 1){
 	if($Chk_Hi >= "900" && $Chk_Hi <= "925"){
 		$SetStartTime = "09:29";

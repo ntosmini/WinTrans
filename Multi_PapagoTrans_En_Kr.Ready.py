@@ -37,21 +37,22 @@ time.sleep(2)
 pyautogui.hotkey('enter')	#엔터
 """
 #pyautogui.hotkey('enter')	#엔터
-pyautogui.leftClick(x=1866, y=160)
-time.sleep(3)
+
+time.sleep(1)
 pyautogui.hotkey('alt', 'space')
 time.sleep(1)
 pyautogui.hotkey('x')
 time.sleep(1)
+pyautogui.leftClick(x=1866, y=160)
+time.sleep(2)
 
-
-pyautogui.leftClick(x=68, y=154)
-time.sleep(1)
+pyautogui.leftClick(x=78, y=242)
 pyautogui.hotkey('F6')
 time.sleep(1)
-pyautogui.write("papago.naver.com/?sk=en&tk=ko", interval=0.005)
+pyperclip.copy("papago.naver.com/?sk=en&tk=ko")
+pyautogui.hotkey('ctrl', 'v')
 time.sleep(1)
-pyautogui.hotkey('del')	#del
+#pyautogui.hotkey('del')	#del
 pyautogui.hotkey('enter')	#엔터
 time.sleep(3)
 

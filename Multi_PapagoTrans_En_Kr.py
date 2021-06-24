@@ -18,7 +18,8 @@ sys.stdout=codecs.getwriter("utf-8")(sys.stdout.detach())
 
 from urllib.request import urlopen
 
-
+Pc = sys.argv[1]
+Pc = "PC" + Pc
 
 #원문 가져오기
 f = open("C:/xampp/htdocs/_Ntos/_Trans/_Multi_PapagoTrans_En_Kr.txt", "r", encoding="utf8")
@@ -64,12 +65,12 @@ result = Tk().selection_get(selection="CLIPBOARD")
 
 time.sleep(1)
 URL = 'http://amazon.ntos.co.kr/_Mini_/_WinTrans/Multi_PapagoTrans_En_Kr.Up.php' 
-data = {'CustId': 'amazon', 'codelist':TransItemCode, 'namelist' : result } 
+data = {'CustId': 'amazon', 'Pc':Pc, 'codelist':TransItemCode, 'namelist' : result } 
 response = requests.post(URL, data=data)
 
 #	time.sleep(1)
 pyautogui.scroll(5000)	#스크롤 상단으로
-time.sleep(1)
+time.sleep(2)
 
 #번역기록삭제
 pyautogui.leftClick(x=1851, y=204)
@@ -79,3 +80,4 @@ pyautogui.hotkey('enter')	#엔터
 #원문 삭제
 #	time.sleep(1)
 pyautogui.leftClick(x=754, y=333)
+print(response.text)
