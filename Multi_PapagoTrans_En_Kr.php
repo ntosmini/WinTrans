@@ -69,7 +69,7 @@ switch($TransData){
 		if(preg_match('@success@', $Result)) {
 			$sType = "run";
 		} else {
-			$sType = "ready";
+			$sType = "rerun";
 		}
 
 	break;
@@ -83,10 +83,10 @@ $sType = (empty($sType))?"run":$sType;
 if($pc == 1){
 	if($Chk_Hi >= "900" && $Chk_Hi <= "925"){
 		$SetStartTime = "09:29";
-		$sType == "ready";
+		$sType = "ready";
 	} else if($Chk_Hi >= "1010" && $Chk_Hi <= "1030"){
 		$SetStartTime = "10:35";
-		$sType == "ready";
+		$sType = "ready";
 	}
 }
 
@@ -103,6 +103,11 @@ if($sType == "run"){	//바로시작
 	exec('schtasks /create /tn "'.$sName.'" /tr c:\xampp\htdocs\_Ntos\_Trans\Multi_PapagoTrans_En_Kr.bat /sc once /st '.$SetStartTime.' /sd '.$SetStartDay);
 	exec('schtasks /run /tn "'.$sName.'" ');
 	*/
+} else if($sType == "rerun"){
+	sleep(1);
+	exec('taskkill /im chrome.exe /f');	
+	sleep(3);
+	exec('schtasks /run /tn "'.$sName.'" ');
 } else {
 	sleep(1);
 	exec('taskkill /im chrome.exe /f');	
