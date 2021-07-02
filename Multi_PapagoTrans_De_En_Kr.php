@@ -10,7 +10,7 @@ $SetStart = mktime(date('H'),date('i'),date('s')+$RandTime,date('m'),date('d'),d
 $SetStartDay = date('Y/m/d', $SetStart);
 $SetStartTime = date('H:i', $SetStart);
 
-$sName = "_PapagoMultiTrans";
+$sName = "_WinTrans";
 
 $dir = 'C:/xampp/htdocs/_Ntos/_Trans';
 $TransData= CF_getDataURL('http://amazonde.ntos.co.kr/_Mini_/_WinTrans/Multi_PapagoTrans_De_En_Kr.List.php?CustId=amazon&pc='.$pc);

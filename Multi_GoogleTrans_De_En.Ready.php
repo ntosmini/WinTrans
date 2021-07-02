@@ -9,6 +9,6 @@ exec('start chrome');
 $sName = "_WinTrans";
 exec('schtasks /delete /tn "'.$sName.'" /f');
 
-passthru("/xampp/htdocs/_Ntos/_Trans/Multi_PapagoTrans_En_Kr.Ready.py");
+passthru("/xampp/htdocs/_Ntos/_Trans/Multi_GoogleTrans_De_En.Ready.py");
 
-exec('c:/xampp/php/php.exe -f "c:/xampp/htdocs/_Ntos/_Trans/Multi_PapagoTrans_En_Kr.php"');
+exec('c:/xampp/php/php.exe -f "c:/xampp/htdocs/_Ntos/_Trans/Multi_GoogleTrans_De_En.php"');

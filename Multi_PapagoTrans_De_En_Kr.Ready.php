@@ -6,7 +6,7 @@ exec('taskkill /im chrome.exe /f');
 sleep(3);
 exec('start chrome');
 
-$sName = "_PapagoMultiTrans";
+$sName = "_WinTrans";
 exec('schtasks /delete /tn "'.$sName.'" /f');
 
 passthru("/xampp/htdocs/_Ntos/_Trans/Multi_PapagoTrans_De_En_Kr.Ready.py");
