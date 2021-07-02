@@ -47,8 +47,8 @@ pyautogui.leftClick(x=430, y=332)
 #	time.sleep(1)
 
 #원문 입력
-pyautogui.hotkey('ctrl', 'a')
-time.sleep(1)
+#pyautogui.hotkey('ctrl', 'a')
+#time.sleep(1)
 pyautogui.hotkey('ctrl', 'v')
 time.sleep(5)
 
