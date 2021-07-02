@@ -59,23 +59,23 @@ time.sleep(5)
 
 
 pyautogui.hotkey('tab')
-time.sleep(1)
+time.sleep(0.5)
 pyautogui.hotkey('ctrl', 'a')
-time.sleep(1)
+time.sleep(0.5)
 pyautogui.hotkey('ctrl', 'c')
 #	time.sleep(2)
-time.sleep(1)
+time.sleep(0.5)
 
 result = Tk().selection_get(selection="CLIPBOARD")
 
-time.sleep(1)
+#time.sleep(1)
 URL = 'http://amazonde.ntos.co.kr/_Mini_/_WinTrans/Multi_GoogleTrans_De_En.Up.php' 
 data = {'CustId': 'amazon', 'Pc':Pc, 'codelist':TransItemCode, 'namelist' : result } 
 response = requests.post(URL, data=data)
 
 #	time.sleep(1)
 #pyautogui.scroll(5000)	#스크롤 상단으로
-time.sleep(2)
+time.sleep(1)
 
 #번역기록삭제
 pyautogui.hotkey('enter')	#엔터
