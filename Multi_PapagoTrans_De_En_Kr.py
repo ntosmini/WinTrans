@@ -67,7 +67,7 @@ time.sleep(1)
 URL = 'http://amazonde.ntos.co.kr/_Mini_/_WinTrans/Multi_PapagoTrans_De_En_Kr.Up.php' 
 data = {'CustId': 'amazon', 'Pc':Pc, 'codelist':TransItemCode, 'namelist' : result } 
 response = requests.post(URL, data=data)
-result_text = response.text
+
 #	time.sleep(1)
 pyautogui.scroll(5000)	#스크롤 상단으로
 time.sleep(2)
@@ -80,11 +80,4 @@ pyautogui.hotkey('enter')	#엔터
 #원문 삭제
 #	time.sleep(1)
 pyautogui.leftClick(x=754, y=333)
-
-if result_text == "success" :
-	pass
-else :
-	pyautogui.hotkey('alt', 'F4')
-
-
-print(result_text)
+print(response.text)
