@@ -26,10 +26,13 @@ else :
 	print("Not Screen")
 	exit()
 
-
-pyautogui.hotkey('n')
+pyautogui.hotkey('alt', 'tab')
+time.sleep(3)
+pyautogui.hotkey('alt', 'space')
 time.sleep(1)
-pyautogui.hotkey('enter')	#엔터
+pyautogui.hotkey('c')
+
+
 
 pyautogui.hotkey('win')
 time.sleep(1)
