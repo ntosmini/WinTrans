@@ -26,7 +26,11 @@ else :
 	print("Not Screen")
 	exit()
 
-"""
+
+pyautogui.hotkey('n')
+time.sleep(1)
+pyautogui.hotkey('enter')	#엔터
+
 pyautogui.hotkey('win')
 time.sleep(1)
 pyautogui.leftClick(x=115, y=1057)
@@ -35,10 +39,10 @@ pyperclip.copy("chrome")
 pyautogui.hotkey('ctrl', 'v')
 time.sleep(2)
 pyautogui.hotkey('enter')	#엔터
-"""
+
 #pyautogui.hotkey('enter')	#엔터
 
-time.sleep(1)
+time.sleep(3)
 pyautogui.hotkey('alt', 'space')
 time.sleep(1)
 pyautogui.hotkey('x')

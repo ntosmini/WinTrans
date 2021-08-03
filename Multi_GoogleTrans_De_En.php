@@ -81,11 +81,11 @@ unlink($dir."/_Multi_GoogleTrans_De_En.txt");
 $sType = (empty($sType))?"run":$sType;
 
 if($pc == 1){
-	if($Chk_Hi >= "900" && $Chk_Hi <= "925"){
-		$SetStartTime = "09:29";
+	if($Chk_Hi >= "900" && $Chk_Hi <= "920"){
+		$SetStartTime = "09:21";
 		$sType = "ready";
-	} else if($Chk_Hi >= "1010" && $Chk_Hi <= "1030"){
-		$SetStartTime = "10:35";
+	} else if($Chk_Hi >= "1000" && $Chk_Hi <= "1020"){
+		$SetStartTime = "10:21";
 		$sType = "ready";
 	}
 }
