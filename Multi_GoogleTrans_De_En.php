@@ -113,4 +113,5 @@ if($sType == "run"){	//바로시작
 	exec('taskkill /im php.exe /f');
 	exec('taskkill /im cmd.exe /f');
 	exec('taskkill /im conhost.exe /f');
+	exec('taskkill /im schtasks.exe /f');
 }	//end if
