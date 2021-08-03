@@ -4,11 +4,9 @@ include_once(dirname(__FILE__).'/_common.php');
 
 $Chk_Hi = (int)date("Hi");
 
-$RandTime = 120;	//초
 
-$SetStart = mktime(date('H'),date('i'),date('s')+$RandTime,date('m'),date('d'),date('Y'));
-$SetStartDay = date('Y/m/d', $SetStart);
-$SetStartTime = date('H:i', $SetStart);
+list($SetStartDay, $SetStartTime) = SetTime(120);
+
 
 $sName = "_WinTrans";
 

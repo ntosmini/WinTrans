@@ -26,6 +26,10 @@ f = open("C:/xampp/htdocs/_Ntos/_Trans/_Multi_GoogleTrans_De_En.txt", "r", encod
 TransData = f.read()
 f.close()
 
+#데이타 없으면 종료
+if TransData == "" :
+	exit()
+
 #번역시작
 List = TransData.split("\n\n")
 number = 0
@@ -82,4 +86,13 @@ pyautogui.hotkey('enter')	#엔터
 
 #원문 삭제
 #	time.sleep(1)
+
+#실행  pid
+import os
+Rpid = os.getpid()
+f = open("C:/xampp/htdocs/_Ntos/_Trans/_pid.txt", "w", encoding="utf8")
+f.write(str(Rpid))
+f.close()
+
+
 print(response.text)

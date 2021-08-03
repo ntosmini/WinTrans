@@ -42,11 +42,8 @@ switch($TransData){
 	break;
 
 	case 'reboot' :
-			$RandTime = 300;	//초
 
-			$SetStart = mktime(date('H'),date('i'),date('s')+$RandTime,date('m'),date('d'),date('Y'));
-			$SetStartDay = date('Y/m/d', $SetStart);
-			$SetStartTime = date('H:i', $SetStart);
+			list($SetStartDay, $SetStartTime) = SetTime(300);
 			exec('taskkill /im chrome.exe /f');
 			sleep(0.5);
 			exec('schtasks /delete /tn "'.$sName.'" /f');

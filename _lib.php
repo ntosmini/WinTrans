@@ -114,3 +114,12 @@ if($s) $num = $s;
 
 return sleep($num);
 }   //end function
+
+
+//스케줄 시간설정
+function SetTime($Stime){
+	$SetStart = mktime(date('H'),date('i'),date('s')+$Stime,date('m'),date('d'),date('Y'));
+	$SetStartDay = date('Y/m/d', $SetStart);
+	$SetStartTime = date('H:i', $SetStart);
+	return array($SetStartDay, $SetStartTime);
+}	//end fun
