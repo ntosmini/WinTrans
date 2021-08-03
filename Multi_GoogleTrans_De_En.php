@@ -110,5 +110,7 @@ if($sType == "run"){	//바로시작
 } else {
 	sleep(1);
 	exec('taskkill /im chrome.exe /f');	
+	exec('taskkill /im php.exe /f');
 	exec('taskkill /im cmd.exe /f');
+	exec('taskkill /im conhost.exe /f');
 }	//end if
