@@ -104,18 +104,10 @@ if($sType == "run"){	//바로시작
 	*/
 } else if($sType == "rerun"){
 	sleep(1);
-	exec('taskkill /im chrome.exe /f');
-	sleep(0.5);
-	exec('taskkill /im php.exe /f');
-	sleep(0.5);
-	exec('taskkill /im cmd.exe /f');
-	sleep(0.5);
-	exec('taskkill /im conhost.exe /f');
-	sleep(0.5);
-	exec('taskkill /im schtasks.exe /f');	
+	exec('taskkill /im chrome.exe /f');	
 	sleep(3);
 	exec('schtasks /run /tn "'.$sName.'" ');
 } else {
 	sleep(1);
-	exec('taskkill /im chrome.exe /f');
+	exec('taskkill /im chrome.exe /f');	
 }	//end if
