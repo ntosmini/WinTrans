@@ -3,8 +3,8 @@ include_once(dirname(__FILE__).'/_common.php');
 
 exec('taskkill /im chrome.exe /f');
 //exec('taskkill /im cmd.exe /f');
-//sleep(3);
-//exec('start chrome');
+sleep(3);
+exec('start chrome');
 
 $sName = "_WinTrans";
 exec('schtasks /delete /tn "'.$sName.'" /f');

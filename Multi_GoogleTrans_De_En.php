@@ -110,4 +110,5 @@ if($sType == "run"){	//바로시작
 } else {
 	sleep(1);
 	exec('taskkill /im chrome.exe /f');	
+	exec('taskkill /im cmd.exe /f');
 }	//end if
