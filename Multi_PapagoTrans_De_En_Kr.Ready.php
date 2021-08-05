@@ -5,7 +5,7 @@ include_once(dirname(__FILE__).'/_common.php');
 if(!empty($pid)){
 	exec('taskkill /f /pid '.$pid);
 }
-exec('taskkill /im chrome.exe /f');
+//exec('taskkill /im chrome.exe /f');
 //exec('taskkill /im cmd.exe /f');
 sleep(3);
 exec('start chrome');
