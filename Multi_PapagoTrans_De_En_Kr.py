@@ -81,4 +81,3 @@ pyautogui.hotkey('enter')	#엔터
 #	time.sleep(1)
 pyautogui.leftClick(x=754, y=333)
 print(response.text)
-exit()
